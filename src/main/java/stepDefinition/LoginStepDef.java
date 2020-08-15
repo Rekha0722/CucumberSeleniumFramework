@@ -1,6 +1,7 @@
 package stepDefinition;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -9,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import cucumber.api.DataTable;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -52,15 +54,29 @@ public class LoginStepDef {
 	   
 	}
 	
-	/*Use any of one regular expr
+	/* Data driven using example keyword.
+	 * Use any of one regular expr
 	 * 1. \"[(^\")*]"\    
 	 * 2. \"(.*)\"      */
 
-	@Then("^enter \"(.*)\" and \"(.*)\"$")
+	/*@Then("^enter \"(.*)\" and \"(.*)\"$")
 	public void enter_username_and_Passowrd(String uname,String pass)  {
 		driver.findElement(By.xpath("//a[@id='CC-loginHeader-login']")).click();
 		driver.findElement(By.xpath("//input[@id='CC-login-input']")).sendKeys(uname);
 		driver.findElement(By.xpath("//input[@id='CC-login-password-input']")).sendKeys(pass);
+		
+	}*/
+
+	/*Data driven using data table
+	      */
+
+	@Then("^enter username and password")
+	public void enter_username_and_Passowrd(DataTable credentials)  {
+		List<List<String>> dataValues= credentials.raw();
+
+		driver.findElement(By.xpath("//a[@id='CC-loginHeader-login']")).click();
+		driver.findElement(By.xpath("//input[@id='CC-login-input']")).sendKeys(dataValues.get(0).get(0));
+		driver.findElement(By.xpath("//input[@id='CC-login-password-input']")).sendKeys(dataValues.get(0).get(1));
 		
 	}
 

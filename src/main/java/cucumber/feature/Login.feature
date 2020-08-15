@@ -20,11 +20,11 @@ Feature: Shopizer Login
 #Then User clicks on Login Button
 #And User is on Home Page
 
-Examples:
-	|username|password|
-	|rekharaut7@gmail.com|Anaya@143|
-	|pramoddeshmane@gmail.com|rekha|
-	|ahsgd@gmail.com|jdhfkjds|
+#Examples:
+#	|username|password|
+#	|rekharaut7@gmail.com|Anaya@143|
+#	|pramoddeshmane@gmail.com|rekha|
+#	|ahsgd@gmail.com|jdhfkjds|
 	
 	
 Scenario: Shopizer Login Test Scenario
@@ -33,5 +33,6 @@ Given User is present on login page
 Then User clicks on Popup Close button
 When title of login page is FabIndia
 Then enter username and password
+ |rekharaut7@gmail.com | Anaya@143 |
 Then User clicks on Login Button
 And User is on Home Page
