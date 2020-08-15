@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="3" time="47.442512">
+<testcase classname="Shopizer Login" name="Shopizer Login Test Scenario" time="19.670147">
+<system-out><![CDATA[Given User is present on login page.........................................passed
+Then User clicks on Popup Close button......................................passed
+When title of login page is FabIndia........................................passed
+Then enter "rekharaut7@gmail.com" and "Anaya@143"...........................passed
+Then User clicks on Login Button............................................passed
+And User is on Home Page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Shopizer Login" name="Shopizer Login Test Scenario 2" time="13.643913">
+<system-out><![CDATA[Given User is present on login page.........................................passed
+Then User clicks on Popup Close button......................................passed
+When title of login page is FabIndia........................................passed
+Then enter "pramoddeshmane@gmail.com" and "rekha"...........................passed
+Then User clicks on Login Button............................................passed
+And User is on Home Page....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Shopizer Login" name="Shopizer Login Test Scenario 3" time="14.128452">
+<system-out><![CDATA[Given User is present on login page.........................................passed
+Then User clicks on Popup Close button......................................passed
+When title of login page is FabIndia........................................passed
+Then enter "ahsgd@gmail.com" and "jdhfkjds".................................passed
+Then User clicks on Login Button............................................passed
+And User is on Home Page....................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
