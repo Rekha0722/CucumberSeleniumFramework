@@ -67,10 +67,8 @@ public class LoginStepDef {
 		
 	}*/
 
-	/*Data driven using data table
-	      */
-
-	@Then("^enter username and password")
+	/*Data driven using data table */
+	/*@Then("^enter username and password")
 	public void enter_username_and_Passowrd(DataTable credentials)  {
 		List<List<String>> dataValues= credentials.raw();
 
@@ -79,7 +77,22 @@ public class LoginStepDef {
 		driver.findElement(By.xpath("//input[@id='CC-login-password-input']")).sendKeys(dataValues.get(0).get(1));
 		
 	}
+	*/
+	/*Data driven using data table */
+	@Then("^enter username and password")
+	public void enter_username_and_Passowrd(DataTable credentials)  {
+		driver.findElement(By.xpath("//a[@id='CC-loginHeader-login']")).click();
+		for(Map<String,String> dataValues: credentials.asMaps(String.class, String.class)){
+			driver.findElement(By.xpath("//input[@id='CC-login-input']")).sendKeys(dataValues.get("username"));
+			driver.findElement(By.xpath("//input[@id='CC-login-password-input']")).sendKeys(dataValues.get("password"));
+			
+			
 
+		}
+
+		
+		
+	}
 	@Then("^User clicks on Login Button$")
 	public void user_clicks_on_Login_Button() {
 		driver.findElement(By.xpath("//button[@id='CC-userLoginSubmit']")).click();
