@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features="F:\\UdymeSelenium\\ShopizerCucumberBDDFramework\\src\\main\\java\\cucumber\\feature\\Login.feature",// path of the features file
+		features="F:\\UdymeSelenium\\ShopizerCucumberBDDFramework\\src\\main\\java\\cucumber\\feature\\tagging.feature",// path of the features file
 		glue={"stepDefinition"},//path of the step def file
 		format= {"pretty", "html:test-output","json:json_output/cucumber.json","junit:junit.xlm/cucumber.xml"},//generating the report in many format like html,json,xml etc
 		 /**Mapping feature steps to definition steps. If all steps in feature file are implemented in step def.
@@ -21,7 +21,8 @@ import cucumber.api.junit.Cucumber;
 		//dryRun= true
 		dryRun=false,//to check the mapping is proper bet fetaure file and step def file.
 		strict=true,// it will check if ny step def is not define inside the step def file.
-		monochrome=true   // display the output on console in  readable format .
+		monochrome=true,  // display the output on console in  readable format .
+	tags= {"~@SmokeTest" ,"~@RegressionTest" ,"~@EndToEnd"} //If i want to execute smoke test cases the we uesd( ~ )
 		)
 
 
